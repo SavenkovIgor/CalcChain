@@ -2,7 +2,7 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "Build",
+            "label": "1-Build",
             "type": "shell",
             "command": "cargo build",
             "group": {
@@ -14,7 +14,7 @@
             ]
         },
         {
-            "label": "Build (WASM)",
+            "label": "2-Build (WASM)",
             "type": "shell",
             "command": "cargo build --target wasm32-unknown-unknown",
             "group": {
@@ -29,12 +29,27 @@
             }
         },
         {
-            "label": "Run",
+            "label": "3-Run",
             "type": "shell",
             "command": "cargo run",
             "group": {
                 "kind": "test",
                 "isDefault": false
+            },
+            "problemMatcher": [
+                "$rustc"
+            ],
+            "presentation": {
+                "focus": true
+            }
+        },
+        {
+            "label": "4-Test",
+            "type": "shell",
+            "command": "cargo test",
+            "group": {
+                "kind": "test",
+                "isDefault": true
             },
             "problemMatcher": [
                 "$rustc"
